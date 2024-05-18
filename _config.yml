@@ -3,13 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
+title: 夜空的神秘
+subtitle: '夜空的另一边所编织出的神秘本身。看起来很滑稽对吧？'
 description: ''
 keywords:
-author: John Doe
-language: en
-timezone: ''
+author: Light
+language: cn
+timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
