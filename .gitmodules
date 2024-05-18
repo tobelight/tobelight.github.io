@@ -1,0 +1,3 @@
+[submodule "themes/hexo-theme-hux"]
+	path = themes/hexo-theme-hux
+	url = https://github.com/tobelight/hexo-theme-hux

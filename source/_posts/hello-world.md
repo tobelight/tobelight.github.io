@@ -1,5 +1,5 @@
 ---
-title: 使用 Hexo 在 Github 上搭建博客
+title: 使用 Hexo 搭建博客
 date: 2024-05-18 20:20:20
 tags: hexo
 ---
@@ -15,7 +15,7 @@ tags: hexo
 ### 环境准备
 
 1. [Node.js](https://nodejs.org/en/download/package-manager)
-2. [hexo](https://hexo.io/zh-cn/docs/)
+2. [Hexo](https://hexo.io/zh-cn/docs/)
 
 ```bash
 # 全局安装 hexo 命令工具
@@ -26,13 +26,13 @@ $ hexo init
 $ hexo server
 ```
 
-### 使用 Github Action 自动部署到 Github Page
+### 部署到 Github Page
 
 参考 [在 GitHub Pages 上部署 Hexo](https://hexo.io/zh-cn/docs/github-pages)
 
 1. 在 Github 上创建 `<你的 GitHub 用户名>.github.io` 的仓库
 2. 将 Hexo 文件夹中的文件 push 到储存库的默认分支
-3. 在储存库中建立 `.github/workflows/pages.yml`，并填入下面内容
+3. 在储存库中建立 `.github/workflows/pages.yml`，并填入下面内容，然后再推送到 Github 上即可
 
 ```yml .github/workflows/pages.yml
 name: Pages
@@ -86,3 +86,46 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 ```
+
+## 个性配置
+
+### 主题配置
+
+这里我选择的是 [hux](https://huangxuan.me/) 的主题，但它是用 [jekyll](https://jekyllrb.com/) 构建的。
+所以我们就在 Github 上找到了一个[把 hux 移植到 hexo 的主题](https://github.com/hhking/hexo-theme-huxo)。
+然后把这个仓库 fork 到自己的仓库里面做定制化。
+
+1. 为博客添加主题
+
+   ```bash
+   # 我把主题 fork 到了我自己的仓库 https://github.com/tobelight/hexo-theme-hux
+   # 添加主题到我的 blog 中
+   $ git submodule add  https://github.com/tobelight/hexo-theme-hux themes/hexo-theme-hux
+   ```
+
+2. 在 config 中修改主题。
+
+   ```yml _config.yml
+   theme: hexo-theme-hux
+   ```
+
+3. 添加 less-render
+
+   因为主题使用了 less 作为样式，所以需要添加依赖到 package.json 中。
+
+   ```json package.json
+   {
+     "dependencies": {
+       "hexo-renderer-less": "^4.0.0"
+     }
+   }
+   ```
+
+   ```bash
+   # 安装依赖
+   $ npm install
+   # 清理之前生成的资源
+   $ hexo clean
+   # 执行 server 以本地查看效果
+   $ hexo server
+   ```
