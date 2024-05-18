@@ -129,3 +129,35 @@ jobs:
    # 执行 server 以本地查看效果
    $ hexo server
    ```
+
+### 支持资源文件
+
+参考 [Hexo 资源文件夹配置文档](https://hexo.io/zh-cn/docs/asset-folders)
+
+```yml _config.yml
+marked:
+  prependRoot: true
+  postAsset: true
+```
+
+## 问题排查
+
+乱七八糟的问题整合。
+
+### 部署 hexo 却出现 jekyll 错误
+
+参考 issues: <https://github.com/orgs/community/discussions/106846>
+参考 doc：<https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#static-site-generators>
+
+添加空文件 `.nojekyll` 到根目录。
+
+![Alt](build-error.jpg)
+
+### 配置支持资源文件时，markdown 语法没有生效
+
+参考 issues：<https://github.com/hexojs/hexo-renderer-marked/issues/281>
+
+hexo version: 7.2.0
+hexo-renderer-marked: 6.3.0
+
+目前 hexo-renderer-marked 没有成功支持 hexo `7.2.0`，需要降级到`7.1.1`。
