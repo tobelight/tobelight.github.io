@@ -1,10 +1,16 @@
 ---
 title: 使用 Hexo 搭建博客
+# subtitle: 踩坑日志
+# description: 使用 Hexo 搭建在 Github Page 搭建博客
 date: 2024-05-18 20:20:20
 tags: hexo
+keys: hexo blog hux theme
+header-img: hello-world/banner.jpg
 ---
 
 作为一名 [INFJ-A](https://www.16personalities.com/ch/infj-%E4%BA%BA%E6%A0%BC)，我一直渴望拥有一个可以记录分享自己想法和作品的平台。经过一番探索，我最终选择了使用 Hexo 作为我的博客搭建工具。Hexo 以其简洁优雅的风格和强大的功能吸引了我，并帮助我顺利搭建了自己的博客。
+
+<!--more-->
 
 在搭建博客的过程中，我遇到了一些需要解决的细节问题，也对一些默认配置进行了个性化调整。本文将记录我的搭建过程，并分享一些个人经验和建议，希望能对想要使用 Hexo 搭建博客的朋友有所帮助。
 
@@ -32,7 +38,7 @@ $ hexo server
 
 1. 在 Github 上创建 `<你的 GitHub 用户名>.github.io` 的仓库
 2. 将 Hexo 文件夹中的文件 push 到储存库的默认分支
-3. 在储存库中建立 `.github/workflows/pages.yml`，并填入下面内容，然后再推送到 Github 上即可
+3. 在储存库中建立 `.github/workflows/pages.yml`，并填入下面内容，再推送到 Github 上
 
 ```yml .github/workflows/pages.yml
 name: Pages
@@ -140,6 +146,16 @@ marked:
   postAsset: true
 ```
 
+### 生成 page 页面
+
+```bash
+# 生成 about 页面
+$ hexo new page about
+```
+
+默认生成的 `index.md` 文件中没有指定 `layout: about`, 需要手动添加，
+否则会导致 about 页面生成失败。
+
 ## 问题排查
 
 乱七八糟的问题整合。
@@ -161,3 +177,26 @@ hexo version: 7.2.0
 hexo-renderer-marked: 6.3.0
 
 目前 hexo-renderer-marked 没有成功支持 hexo `7.2.0`，需要降级到`7.1.1`。
+
+```json package.json
+{
+  "hexo": {
+    "version": "7.1.1"
+  },
+  "dependencies": {
+    "hexo": "7.1.1"
+  }
+}
+```
+
+## 其他
+
+编写 Hexo Theme 需要的属性以及方法都在官方文档中。
+[支持的变量](https://hexo.io/zh-cn/docs/variables)
+[支持的函数](https://hexo.io/zh-cn/docs/helpers)
+
+## Todo List
+
+1. 添加评论功能
+2. 浏览人数统计
+3. 文章字数统计，阅读时间
