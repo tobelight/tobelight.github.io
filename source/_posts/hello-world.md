@@ -1,10 +1,14 @@
 ---
+# https://hexo.io/zh-cn/docs/front-matter
+# layout: post
 title: 使用 Hexo 搭建博客
+date: 2024-05-18 20:20:00
+updated: 2024-05-19 21:30:00
+comments: true
+tags: hexo
+# categories:
 # subtitle: 踩坑日志
 # description: 使用 Hexo 搭建在 Github Page 搭建博客
-date: 2024-05-18 20:20:20
-tags: hexo
-keys: hexo blog hux theme
 header-img: hello-world/banner.jpg
 ---
 
@@ -146,7 +150,7 @@ marked:
   postAsset: true
 ```
 
-### 生成 page 页面
+### 生成 About 页面
 
 ```bash
 # 生成 about 页面
@@ -155,6 +159,24 @@ $ hexo new page about
 
 默认生成的 `index.md` 文件中没有指定 `layout: about`, 需要手动添加，
 否则会导致 about 页面生成失败。
+
+### 添加评论功能
+
+参考 <https://giscus.app/zh-CN>
+按照流程生成脚本，然后添加到 theme 中。
+
+1. 在用户 Setting -> Application 中添加 giscus 应用，可指定权限
+2. 在仓库的 Setting 中，找到 Discussions 并进行勾选
+3. 在 [giscus](https://giscus.app/zh-CN) 页面中，获取最终脚本
+4. 依据需求把脚本添加到 theme 的对应位置上
+
+在这个页面上，任何人指定仓库就能获取到这段脚本，没有前置条件和权限控制。
+这会导致任何人都可以把这个脚本用在任何一个网站上。
+基于安全性考虑，我们还需要配置只有我们的网站才能使用这个脚本。
+
+参考 <https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md>
+
+我们需要创建并配置 giscus.json 到仓库中，让 giscus 只允许我们配置的源使用。
 
 ## 问题排查
 
@@ -197,6 +219,5 @@ hexo-renderer-marked: 6.3.0
 
 ## Todo List
 
-1. 添加评论功能
-2. 浏览人数统计
-3. 文章字数统计，阅读时间
+1. 浏览人数统计
+2. 文章字数统计，阅读时间
