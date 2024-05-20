@@ -158,7 +158,7 @@ $ hexo new page about
 ```
 
 默认生成的 `index.md` 文件中没有指定 `layout: about`, 需要手动添加，
-否则会导致 about 页面生成失败。
+否则会导致 about 页面无法正常显示。
 
 ### 添加评论功能
 
@@ -177,6 +177,14 @@ $ hexo new page about
 参考 <https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md>
 
 我们需要创建并配置 giscus.json 到仓库中，让 giscus 只允许我们配置的源使用。
+
+### 字数统计
+
+使用 <https://github.com/theme-next/hexo-symbols-count-time>
+
+1. 安装字数统计的依赖 `npm install hexo-symbols-count-time`
+2. 在 header 中添加以下脚本
+   `<%- symbolsCount(page) %> words, <%- symbolsTime(page) %>`
 
 ## 问题排查
 
@@ -216,8 +224,3 @@ hexo-renderer-marked: 6.3.0
 编写 Hexo Theme 需要的属性以及方法都在官方文档中。
 [支持的变量](https://hexo.io/zh-cn/docs/variables)
 [支持的函数](https://hexo.io/zh-cn/docs/helpers)
-
-## Todo List
-
-1. 浏览人数统计
-2. 文章字数统计，阅读时间
