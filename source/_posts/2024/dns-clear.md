@@ -7,7 +7,7 @@ updated: 2024-05-21 23:00:00
 comments: true
 tags: ["windows", "ipconfig", "dns"]
 # categories:
-# subtitle:
+subtitle: Windows 清除 DNS 缓存命令
 # description:
 # header-img: hello-world/banner.jpg
 ---
