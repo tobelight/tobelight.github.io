@@ -110,7 +110,7 @@ jobs:
    ```bash
    # 我把主题 fork 到了我自己的仓库 https://github.com/tobelight/hexo-theme-hux
    # 添加主题到我的 blog 中
-   $ git submodule add  https://github.com/tobelight/hexo-theme-hux themes/hexo-theme-hux
+   $ git submodule add https://github.com/tobelight/hexo-theme-hux themes/hexo-theme-hux
    ```
 
 2. 在 config 中修改主题。
@@ -119,7 +119,7 @@ jobs:
    theme: hexo-theme-hux
    ```
 
-3. 添加 less-render
+3. 添加 less-renderer
 
    因为主题使用了 less 作为样式，所以需要添加依赖到 package.json 中。
 
