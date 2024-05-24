@@ -6,8 +6,8 @@ subtitle: 在双击选中短语时，解决中文逗号被包含的问题
 date: 2024-05-25 00:30:00
 updated: 2024-05-25 00:30:00
 comments: true
-tags: ["VS Code", "wordsep", "tip"]
-# categories:
+tags: ["vs code", "wordsep", "arts", "arts-tip"]
+categories: ["arts", "tip"]
 # description:
 # header-img: hello-world/banner.jpg
 ---
