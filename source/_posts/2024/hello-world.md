@@ -9,7 +9,7 @@ tags: hexo
 # categories:
 # subtitle: 踩坑日志
 # description: 使用 Hexo 搭建在 Github Page 搭建博客
-header-img: hello-world/banner.jpg
+header-img: 2024/hello-world/banner.jpg
 ---
 
 作为一名 [INFJ-A](https://www.16personalities.com/ch/infj-%E4%BA%BA%E6%A0%BC)，我一直渴望拥有一个可以记录分享自己想法和作品的平台。经过一番探索，我最终选择了使用 Hexo 作为我的博客搭建工具。Hexo 以其简洁优雅的风格和强大的功能吸引了我，并帮助我顺利搭建了自己的博客。

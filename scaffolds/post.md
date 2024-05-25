@@ -11,5 +11,5 @@ tags:
   - ""
 # categories: ["", ""]
 # description:
-# header-img: hello-world/banner.jpg
+header-img: 2024/{{ title }}/banner.jpg
 ---
