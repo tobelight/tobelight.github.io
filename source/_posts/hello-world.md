@@ -219,6 +219,15 @@ hexo-renderer-marked: 6.3.0
 }
 ```
 
+### VS Code 修改 scaffolds 时，无法保存正确的变量
+
+VS Code 修改 scaffolds 后，由于 `prettier-vscode` 插件的存在，保存时 `{{ date }}` 会变成 `{ { date } }`。
+主要是因为 `prettier.bracketSpacing` 这个配置项会在 `{ char }` 中自动添加空格。
+然后这个属性只允许配置成 `true` 和 `false`，`true` 的时候会自动添加空格，`false` 的时候会自动删除空格变成 `{{char}}` 的形式。
+
+这两种情况都不符合我的期望——配置成 `{{ date }}` 的格式。
+所以我添加了 `.prettierignore` 文件到根目录中，把 `scaffolds` 路径添加到该文件中，不进行格式化操作。
+
 ## 其他
 
 编写 Hexo Theme 需要的属性以及方法都在官方文档中。
