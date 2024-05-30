@@ -17,3 +17,6 @@ updated: 2024-05-28 21:03:29
 
 <https://github.com/didi/xiaoju-survey>
 看了个轻量的调查问卷项目，应该蛮有用的，头一次听说过 `Nestjs`，问了下 AI 应该类似于 Java 中的 Spring，就是个 Nodejs 的框架。
+
+<https://www.cve.org/CVERecord?id=CVE-2024-32002>
+周末动手实践下这个 cve，动手在 git 上，简直是针对我们程序员啊。
