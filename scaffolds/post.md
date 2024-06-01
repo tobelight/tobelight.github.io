@@ -1,6 +1,6 @@
 ---
 # https://hexo.io/zh-cn/docs/front-matter
-# layout: post
+layout: post
 title: {{ title }}
 subtitle: {{ title }}
 date: {{ date }}
