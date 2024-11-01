@@ -1,9 +1,9 @@
 ---
-title: X
+title: Favorites
 date: 2024-05-22 20:19:50
 layout: about
-description: 「ーーーーーーーーーー」
-header-img: images/favorites.jpg
+# description: 「ーーーーーーーーーー」
+# header-img: images/favorites.jpg
 ---
 
 因为热爱，
